@@ -1,4 +1,4 @@
-# Discord News Bot
+# Daily News Discord
 
 Simple news bot created with discord.js
 
