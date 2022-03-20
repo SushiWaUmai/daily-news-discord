@@ -42,6 +42,11 @@ importers:
   apps/bot:
     specifiers:
       '@daily-news-discord/config': workspace:*
+      '@daily-news-discord/discord': workspace:*
+      '@daily-news-discord/environment': workspace:*
+    dependencies:
+      '@daily-news-discord/discord': link:../../packages/discord
+      '@daily-news-discord/environment': link:../../packages/environment
     devDependencies:
       '@daily-news-discord/config': link:../../packages/config
 
@@ -68,6 +73,11 @@ importers:
   packages/discord:
     specifiers:
       '@daily-news-discord/config': workspace:*
+      '@daily-news-discord/environment': workspace:*
+      '@daily-news-discord/logger': workspace:*
+    dependencies:
+      '@daily-news-discord/environment': link:../environment
+      '@daily-news-discord/logger': link:../logger
     devDependencies:
       '@daily-news-discord/config': link:../config
 

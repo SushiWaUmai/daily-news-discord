@@ -1,5 +1,8 @@
+import { client } from "@daily-news-discord/discord";
+import { BOT_TOKEN } from "@daily-news-discord/environment";
+
 const main = async () => {
-  console.log("Hello World!");
+  await client.login(BOT_TOKEN);
 };
 
 main();

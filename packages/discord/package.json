@@ -1,5 +1,5 @@
 {
-  "name": "@daily-news-dicord/discord",
+  "name": "@daily-news-discord/discord",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
@@ -12,6 +12,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "@daily-news-discord/environment": "workspace:*",
+    "@daily-news-discord/logger": "workspace:*"
+  },
   "devDependencies": {
     "@daily-news-discord/config": "workspace:*"
   }
