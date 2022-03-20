@@ -1,0 +1,25 @@
+{
+  "name": "@daily-news-discord/config",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "clean": "rimraf .turbo && rimraf node_modules && rimraf dist"
+  },
+  "files": [
+    "ts/base.json",
+    "ts/esm.json",
+    "ts/nextjs.json",
+    "ts/node.json",
+    "lint/eslintrc-next.json",
+    "lint/eslintrc-node.json",
+    "lint/prettierrc.json"
+  ],
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.10.2",
+    "@typescript-eslint/parser": "^5.10.2",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "@daily-news-discord/bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -b",
+    "deploy": "node dist/index.js",
+    "build:deploy": "npm run build && npm run deploy",
+    "dev": "nodemon --exec npm run build:deploy",
+    "lint": "eslint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@daily-news-discord/config": "workspace:*"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "@daily-news-dicord/discord",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "private": true,
+  "scripts": {
+    "build": "tsc -b",
+    "dev" : "tsc -b -w",
+    "lint": "eslint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@daily-news-discord/config": "workspace:*"
+  }
+}
