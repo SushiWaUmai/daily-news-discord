@@ -2,6 +2,7 @@
   "name": "news-bot",
   "version": "0.0.1",
   "scripts": {
+    "lint": "turbo run lint",
     "build": "turbo run build",
     "dev": "turbo run dev", 
     "deploy": "turbo run deploy",
