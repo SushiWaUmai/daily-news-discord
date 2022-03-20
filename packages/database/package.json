@@ -6,13 +6,18 @@
   "private": true,
   "scripts": {
     "build": "tsc -b",
-    "dev" : "tsc -b -w",
-    "lint": "eslint"
+    "dev": "tsc -b -w --preserveWatchOutput",
+    "lint": "eslint",
+    "clean": "rimraf .turbo && rimraf node_modules && rimraf dist"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
-    "@daily-news-discord/config": "workspace:*"
+    "@daily-news-discord/config": "workspace:*",
+    "prisma": "^3.11.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^3.11.0"
   }
 }

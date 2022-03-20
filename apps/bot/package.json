@@ -8,11 +8,12 @@
     "deploy": "node dist/index.js",
     "build:deploy": "npm run build && npm run deploy",
     "dev": "nodemon --exec npm run build:deploy",
-    "lint": "eslint"
+    "lint": "eslint",
+    "clean": "rimraf .turbo && rimraf node_modules && rimraf dist"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@daily-news-discord/discord": "workspace:*",
     "@daily-news-discord/environment": "workspace:*"

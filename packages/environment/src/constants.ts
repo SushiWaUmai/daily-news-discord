@@ -1,6 +1,5 @@
-import dotenv from "dotenv";
-
-dotenv.config({ path: `${__dirname}/../../../.env` });
+// import dotenv from "dotenv";
+// dotenv.config({ path: `${__dirname}/../../../.env` });
 
 export const BuildMode = (process.env.NODE_ENV || "development") as
   | "development"

@@ -1,12 +1,16 @@
 {
-  "name": "news-bot",
-  "version": "0.0.1",
+  "name": "daily-news-discord",
+  "version": "1.0.0",
   "scripts": {
+    "clean": "turbo run clean && rimraf node_modules",
     "lint": "turbo run lint",
     "build": "turbo run build",
-    "dev": "turbo run dev", 
-    "deploy": "turbo run deploy",
-    "pre-commit": "lint-staged",
+    "dev": "docker-compose -p dailynews_dev --env-file .env.development -f docker-compose.yml -f docker-compose.dev.yml up --build",
+    "start": "docker-compose -p dailynews_prod --env-file .env.production -f docker-compose.yml -f docker-compose.prod.yml up --build",
+    "deploy": "docker-compose -p dailynews_prod --env-file .env.production -f docker-compose.yml -f docker-compose.prod.yml up --build -d",
+    "stop": "docker-compose down",
+    "stop:dev": "docker-compose -p dailynews_dev --env-file .env.development down",
+    "stop:prod": "docker-compose -p dailynews_prod --env-file .env.production down",
     "prepare": "husky install"
   },
   "keywords": [],
@@ -21,9 +25,9 @@
     "eslint-config-prettier": "^8.4.0",
     "eslint-plugin-prettier": "^4.0.0",
     "husky": "^7.0.4",
-    "lint-staged": "^12.3.4",
     "nodemon": "^2.0.15",
     "prettier": "^2.5.1",
+    "rimraf": "^3.0.2",
     "turbo": "^1.1.6",
     "typescript": "^4.5.5"
   },
@@ -33,14 +37,13 @@
     "dotenv": "^16.0.0"
   },
   "description": "Simple news bot created with discord.js",
-  "main": "commitlint.config.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SushiWaUmai/news-bot.git"
+    "url": "git+https://github.com/SushiWaUmai/daily-news-discord.git"
   },
   "bugs": {
-    "url": "https://github.com/SushiWaUmai/news-bot/issues"
+    "url": "https://github.com/SushiWaUmai/daily-news-discord/issues"
   },
-  "homepage": "https://github.com/SushiWaUmai/news-bot#readme",
+  "homepage": "https://github.com/SushiWaUmai/daily-news-discord#readme",
   "packageManager": "pnpm@6.32.3"
 }

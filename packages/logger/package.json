@@ -6,16 +6,17 @@
   "private": true,
   "scripts": {
     "build": "tsc -b",
-    "dev" : "tsc -b -w",
-    "lint": "eslint"
+    "dev" : "tsc -b -w --preserveWatchOutput",
+    "lint": "eslint",
+    "clean": "rimraf .turbo && rimraf node_modules && rimraf dist"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@daily-news-discord/config": "workspace:*"
-  },
+  "license": "MIT",
   "dependencies": {
     "winston": "^3.6.0"
+  },
+  "devDependencies": {
+    "@daily-news-discord/config": "workspace:*"
   }
 }

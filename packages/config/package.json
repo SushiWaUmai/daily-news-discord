@@ -8,7 +8,6 @@
   },
   "files": [
     "ts/base.json",
-    "ts/esm.json",
     "ts/nextjs.json",
     "ts/node.json",
     "lint/eslintrc-next.json",

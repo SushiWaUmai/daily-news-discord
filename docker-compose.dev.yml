@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  app:
+    ports:
+      - "5555:5555"
+    build:
+      args:
+        - BuildMode=development
+    env_file:
+      - .env.development
+    volumes:
+      - ./apps/bot/src:/usr/app/apps/bot/src
+      - ./packages/database/src:/usr/app/packages/database/src
+      - ./packages/discord/src:/usr/app/packages/discord/src
+      - ./packages/environment/src:/usr/app/packages/environment/src
+      - ./packages/logger/src:/usr/app/packages/logger/src
+      - ./packages/news/src:/usr/app/packages/news/src
+    command: pnpm turbo run dev
+ 
