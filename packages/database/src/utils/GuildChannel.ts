@@ -6,8 +6,8 @@ export const createGuildChannel = async (
 ) => {
   await prismaClient.guildChannel.create({
     data: {
-      guild: guildId,
-      channel: channelId,
+      guild_id: guildId,
+      channel_id: channelId,
     },
   });
 };
@@ -16,19 +16,19 @@ export const deleteGuildChannel = async (
   guildId: string,
   channelId: string,
 ) => {
-  await prismaClient.guildChannel.delete({
+  await prismaClient.guildChannel.deleteMany({
     where: {
-      guild: guildId,
-      channel: channelId,
+      guild_id: guildId,
+      channel_id: channelId,
     },
   });
 };
 
 export const getGuildChannel = async (guildId: string, channelId: string) => {
-  return await prismaClient.guildChannel.findOne({
+  return await prismaClient.guildChannel.findFirst({
     where: {
-      guild: guildId,
-      channel: channelId,
+      guild_id: guildId,
+      channel_id: channelId,
     },
   });
 };

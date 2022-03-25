@@ -10,19 +10,14 @@ export default new Command({
   usage: `${PREFIX}help [command]`,
   execute: async (msg, args) => {
     // Create a Embed of all commands
-    const embed = new MessageEmbed();
-    embed.setTitle("Commands");
-    embed.setColor("#0099ff");
-    embed.setFooter({ text: "Daily News" });
+    const embed = new MessageEmbed()
+      .setTitle("Commands")
+      .setColor("#0099ff")
+      .setFooter({ text: "Daily News" });
 
     // If no command is specified, show all commands
     if (!args[0]) {
-      const commandsArray = [];
-      for (const command of commands) {
-        commandsArray.push(`\`${command.name}\``);
-      }
-
-      embed.setDescription(commandsArray.join(", "));
+      embed.setDescription(commands.map((c) => `\`${c.name}\``).join(", "));
     }
 
     // If a command is specified, show that command
