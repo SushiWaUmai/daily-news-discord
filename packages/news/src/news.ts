@@ -33,6 +33,8 @@ export const categories = [
   "automobile",
 ] as const;
 
+export const categoryArray = categories.map((category) => category as string);
+
 export type Category = typeof categories[number];
 
 export const getNews = async (category: Category) => {
