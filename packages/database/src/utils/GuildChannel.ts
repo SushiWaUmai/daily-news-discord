@@ -11,3 +11,24 @@ export const createGuildChannel = async (
     },
   });
 };
+
+export const deleteGuildChannel = async (
+  guildId: string,
+  channelId: string,
+) => {
+  await prismaClient.guildChannel.delete({
+    where: {
+      guild: guildId,
+      channel: channelId,
+    },
+  });
+};
+
+export const getGuildChannel = async (guildId: string, channelId: string) => {
+  return await prismaClient.guildChannel.findOne({
+    where: {
+      guild: guildId,
+      channel: channelId,
+    },
+  });
+};
