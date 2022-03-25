@@ -1,13 +1,13 @@
 import { NEWS_API_ENDPOINT } from "@daily-news-discord/environment";
 import axios from "axios";
 
-interface NewsAPIResponse {
+export interface NewsAPIResponse {
   category: string;
   data: Datum[];
   success: boolean;
 }
 
-interface Datum {
+export interface Datum {
   author: string;
   content: string;
   date: string;
@@ -18,7 +18,7 @@ interface Datum {
   url: string;
 }
 
-const categories = [
+export const categories = [
   "all",
   "business",
   "sports",
@@ -33,7 +33,7 @@ const categories = [
   "automobile",
 ] as const;
 
-type Category = typeof categories[number];
+export type Category = typeof categories[number];
 
 export const getNews = async (category: Category) => {
   const response = await axios.get(`${NEWS_API_ENDPOINT}${category}`);
