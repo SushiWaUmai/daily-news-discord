@@ -15,6 +15,8 @@
   "license": "MIT",
   "dependencies": {
     "@daily-news-discord/environment": "workspace:*",
+    "@daily-news-discord/database": "workspace:*",
+    "@daily-news-discord/news": "workspace:*",
     "@daily-news-discord/logger": "workspace:*"
   },
   "devDependencies": {

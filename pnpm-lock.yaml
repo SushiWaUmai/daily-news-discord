@@ -78,11 +78,15 @@ importers:
   packages/discord:
     specifiers:
       '@daily-news-discord/config': workspace:*
+      '@daily-news-discord/database': workspace:*
       '@daily-news-discord/environment': workspace:*
       '@daily-news-discord/logger': workspace:*
+      '@daily-news-discord/news': workspace:*
     dependencies:
+      '@daily-news-discord/database': link:../database
       '@daily-news-discord/environment': link:../environment
       '@daily-news-discord/logger': link:../logger
+      '@daily-news-discord/news': link:../news
     devDependencies:
       '@daily-news-discord/config': link:../config
 
