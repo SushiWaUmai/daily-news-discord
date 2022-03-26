@@ -22,7 +22,7 @@ See the list of available categories.
 
 Subscribe a category to this channel.
 
-#### `news ubsub`
+#### `news unsub`
 
 Unsubscribe a category to this channel.
 
