@@ -104,9 +104,11 @@ importers:
     specifiers:
       '@daily-news-discord/config': workspace:*
       '@daily-news-discord/environment': workspace:*
+      '@daily-news-discord/logger': workspace:*
       axios: ^0.26.1
     dependencies:
       '@daily-news-discord/environment': link:../environment
+      '@daily-news-discord/logger': link:../logger
       axios: 0.26.1
     devDependencies:
       '@daily-news-discord/config': link:../config

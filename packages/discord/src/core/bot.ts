@@ -1,7 +1,8 @@
 import { Client, Intents, MessageEmbed } from "discord.js";
 import { logger } from "@daily-news-discord/logger";
 import { PREFIX } from "@daily-news-discord/environment";
-import { handleMessage } from "./core/commandHandler";
+import { handleMessage } from "./commandHandler";
+import { sendNews } from "../utils/sendNews";
 
 export const client = new Client({
   intents: [
@@ -38,10 +39,11 @@ client.on("ready", async () => {
       },
     ],
   });
+
+  sendNews();
 });
 
 client.on("messageCreate", async (message) => {
-  logger.info(message.content);
   handleMessage(message);
 });
 

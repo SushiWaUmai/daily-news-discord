@@ -80,3 +80,7 @@ export const getGuildChannels = async (guildId: string, channelId: string) => {
     },
   });
 };
+
+export const getAllGuildChannels = async () => {
+  return await prismaClient.guildChannel.findMany();
+};
