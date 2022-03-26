@@ -15,9 +15,9 @@
   "license": "MIT",
   "devDependencies": {
     "@daily-news-discord/config": "workspace:*",
-    "prisma": "^3.11.0"
+    "prisma": "^3.11.1"
   },
   "dependencies": {
-    "@prisma/client": "^3.11.0"
+    "@prisma/client": "^3.11.1"
   }
 }

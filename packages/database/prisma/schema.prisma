@@ -14,4 +14,5 @@ model GuildChannel {
     id         Int    @id @default(autoincrement())
     guild_id   String
     channel_id String
+    category   String
 }

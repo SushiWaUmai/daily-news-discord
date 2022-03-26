@@ -19,7 +19,6 @@ export interface Datum {
 }
 
 export const categories = [
-  "all",
   "business",
   "sports",
   "world",
