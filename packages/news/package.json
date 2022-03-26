@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "build": "tsc -b",
-    "dev" : "tsc -b -w --preserveWatchOutput",
+    "dev": "tsc -b -w --preserveWatchOutput",
     "lint": "eslint",
     "clean": "rimraf .turbo && rimraf node_modules && rimraf dist"
   },
@@ -14,7 +14,8 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@daily-news-discord/environment": "workspace:*"
+    "@daily-news-discord/environment": "workspace:*",
+    "axios": "^0.26.1"
   },
   "devDependencies": {
     "@daily-news-discord/config": "workspace:*"

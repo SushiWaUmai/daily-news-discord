@@ -14,10 +14,11 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@daily-news-discord/environment": "workspace:*",
     "@daily-news-discord/database": "workspace:*",
+    "@daily-news-discord/environment": "workspace:*",
+    "@daily-news-discord/logger": "workspace:*",
     "@daily-news-discord/news": "workspace:*",
-    "@daily-news-discord/logger": "workspace:*"
+    "discord.js": "^13.6.0"
   },
   "devDependencies": {
     "@daily-news-discord/config": "workspace:*"
