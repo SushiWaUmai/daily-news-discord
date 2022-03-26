@@ -37,6 +37,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             cp -r /root/app/data/dailynews /root/app/dailynews
-            cp /root/secrets/env/.env.production /root/app/dailynews/.env.production
+            cp /root/secrets/dailynews/env/.env.production /root/app/dailynews/.env.production
+            cp /root/secrets/dailynews/env/.env.database /root/app/dailynews/packages/database/.env
             cd /root/app/dailynews/
             sudo pnpm deploy
