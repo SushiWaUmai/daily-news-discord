@@ -18,7 +18,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cp -r /root/app/dailynews/data /root/app/data/dailynews
+            cp -r /root/app/dailynews/data /root/data/dailynews
       - name: Deploy with rsync
         uses: burnett01/rsync-deployments@5.1
         with:
@@ -36,7 +36,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cp -r /root/app/data/dailynews /root/app/dailynews
+            cp -r /root/data/dailynews /root/app/dailynews
             cp /root/secrets/dailynews/env/.env.production /root/app/dailynews/.env.production
             cp /root/secrets/dailynews/env/.env.database /root/app/dailynews/packages/database/.env
             cd /root/app/dailynews/
