@@ -37,7 +37,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             sudo pnpm stop:prod
-            cp -r /root/data/dailynews /root/app/dailynews
+            cp -r /root/data/dailynews/data /root/app/dailynews
             cp /root/secrets/dailynews/env/.env.production /root/app/dailynews/.env.production
             cp /root/secrets/dailynews/env/.env.database /root/app/dailynews/packages/database/.env
             cd /root/app/dailynews/
