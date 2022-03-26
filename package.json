@@ -11,6 +11,8 @@
     "stop": "docker-compose down",
     "stop:dev": "docker-compose -p dailynews_dev --env-file .env.development down",
     "stop:prod": "docker-compose -p dailynews_prod --env-file .env.production down",
+    "logs:dev": "docker-compose -p dailynews_dev logs -f",
+    "logs:prod": "docker-compose -p dailynews_prod logs -f",
     "prepare": "husky install"
   },
   "keywords": [],
