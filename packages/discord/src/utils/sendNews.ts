@@ -8,12 +8,12 @@ import { client } from "../core/bot";
 
 export const nextTime = () => {
   const now = new Date();
-  // Every hour
+  // Every day
   const next = new Date(
     now.getFullYear(),
     now.getMonth(),
-    now.getDate(),
-    now.getHours() + 1,
+    now.getDate() + 1,
+    now.getHours(),
   );
 
   return next;

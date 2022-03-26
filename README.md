@@ -55,11 +55,11 @@ pnpm run dev
 
 #### Development
 
-![Development](.github/development-graph.jpg)
+![Development](.github/images/development-graph.jpg)
 
 #### Deployment
 
-![Deployment](.github/deployment-graph.jpg)
+![Deployment](.github/images/deployment-graph.jpg)
 
 ## License
 [MIT License](LICENSE)

@@ -51,7 +51,7 @@ client.on("guildCreate", async (guild) => {
   const owner = await guild.fetchOwner();
 
   const embed = new MessageEmbed()
-    .setTitle("Thank you for using GoBot!")
+    .setTitle("Thank you for using News Bot!")
     .setDescription(
       `Hello ${owner.displayName}, thank you for adding me to your server!\n\n` +
         `To get started, use the command \`${PREFIX}help\` to see a list of commands.\n\n`,
