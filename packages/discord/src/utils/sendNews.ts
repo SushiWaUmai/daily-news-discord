@@ -9,12 +9,7 @@ import { client } from "../core/bot";
 export const nextTime = () => {
   const now = new Date();
   // Every day
-  const next = new Date(
-    now.getFullYear(),
-    now.getMonth(),
-    now.getDate() + 1,
-    now.getHours(),
-  );
+  const next = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
 
   return next;
 };
@@ -42,21 +37,18 @@ export const sendNews = async () => {
 
   logger.info("Creating Embeds...");
 
-  const embedsToSend = 1;
   const newsEmbeds: { [id: string]: MessageEmbed[] } = Object.entries(
     newsData,
   ).reduce((a, [category, data]) => {
-    const embeds: MessageEmbed[] = data.data
-      .map((d) => {
-        return new MessageEmbed()
-          .setTitle(d.title)
-          .setDescription(d.content)
-          .setColor("#0099ff")
-          .setURL(d.readMoreUrl)
-          .setImage(d.imageUrl)
-          .setAuthor({ name: d.author });
-      })
-      .slice(0, embedsToSend);
+    const embeds: MessageEmbed[] = data.data.map((d) => {
+      return new MessageEmbed()
+        .setTitle(d.title)
+        .setDescription(d.content)
+        .setColor("#0099ff")
+        .setURL(d.readMoreUrl)
+        .setImage(d.imageUrl)
+        .setAuthor({ name: d.author });
+    });
 
     return { ...a, [category]: embeds };
   }, {});
@@ -79,12 +71,14 @@ export const sendNews = async () => {
 
     const embeds = newsEmbeds[guildChannel.category];
 
-    logger.info(`Sending news to ${embeds?.length}`);
-
     if (!embeds || embeds.length <= 0) {
       continue;
     }
 
-    await channel.send({ embeds });
+    const embed = embeds[Math.floor(Math.random() * embeds.length)];
+
+    await channel.send({ embeds: [embed] });
   }
+
+  sendNews();
 };

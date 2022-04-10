@@ -1,6 +1,7 @@
 docker-compose.env
 docker-compose*.yml
 Dockerfile
+.env.*
 .vscode
 
 node_modules
