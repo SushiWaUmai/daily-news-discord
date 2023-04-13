@@ -1,0 +1,14 @@
+docker-compose*.yml
+Dockerfile
+.env.*
+.vscode
+
+data/
+
+LICENSE
+README.md
+CHANGELOG.md
+CONTRIBUTING.md
+
+.github
+.git
