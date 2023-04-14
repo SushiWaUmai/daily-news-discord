@@ -12,11 +12,12 @@
 [![GitHub License](https://img.shields.io/github/license/SushiWaUmai/daily-news-discord)](https://github.com/SushiWaUmai/daily-news-discord/blob/main/LICENSE)
 ![CI](https://github.com/SushiWaUmai/daily-news-discord/actions/workflows/build-docker.yml/badge.svg)
 [![stable release](https://img.shields.io/github/release/SushiWaUmai/daily-news-discord.svg?maxAge=3600&label=download)](https://github.com/SushiWaUmai/daily-news-discord/releases)
+[![Docker Pulls](https://img.shields.io/docker/pulls/sushiwaumai/daily-news-discord)](https://hub.docker.com/r/sushiwaumai/daily-news-discord)
 
 </div>
 
 <p align="center">
-Simple news bot created with discord.js
+Simple news bot created in go.
 </p>
 
 ## How to setup
