@@ -41,7 +41,7 @@ type NewsAPIResponse struct {
 	Success  bool    `json:"success"`
 }
 
-func getNews(category string) (*NewsAPIResponse, error) {
+func GetNews(category string) (*NewsAPIResponse, error) {
 	resp, err := http.Get(fmt.Sprintf("%s%s", newsAPIEndpoint, category))
 	if err != nil {
 		return nil, err

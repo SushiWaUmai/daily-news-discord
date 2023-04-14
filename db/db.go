@@ -83,7 +83,7 @@ func GetGuildChannels(guildID string, channelID string) ([]GuildChannel, error) 
 	return guildChannels, nil
 }
 
-func GetAllGuildChannels(db *gorm.DB) ([]GuildChannel, error) {
+func GetAllGuildChannels() ([]GuildChannel, error) {
 	var guildChannels []GuildChannel
 	err := db.Find(&guildChannels).Error
 	if err != nil {

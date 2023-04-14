@@ -34,7 +34,7 @@ func UnregisterCommands(dg *discordgo.Session) {
 	for _, c := range CommandMap {
 		err := dg.ApplicationCommandDelete(dg.State.User.ID, "", c.AppCmd.ID)
 		if err != nil {
-			log.Panicf("Cannot delete '%v' command: %v", c.AppCmd.Name, err)
+			log.Printf("Could not delete '%v' command: %v", c.AppCmd.Name, err)
 		}
 	}
 }
