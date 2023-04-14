@@ -8,9 +8,14 @@ import (
 )
 
 func init() {
+	var defaultMemberPermissions int64 = discordgo.PermissionViewChannel | discordgo.PermissionSendMessages
+	dmPermission := false
+
 	createCommand(&discordgo.ApplicationCommand{
 		Name:        "list",
 		Description: "sends a list of subscribed news",
+		DefaultMemberPermissions: &defaultMemberPermissions,
+		DMPermission:             &dmPermission,
 	}, func(dg *discordgo.Session, i *discordgo.InteractionCreate) {
 		guildID := i.GuildID
 		channelID := i.ChannelID

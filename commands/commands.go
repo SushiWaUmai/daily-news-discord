@@ -35,7 +35,6 @@ func UnregisterCommands(dg *discordgo.Session) {
 		err := dg.ApplicationCommandDelete(dg.State.User.ID, "", c.AppCmd.ID)
 		if err != nil {
 			log.Printf("Failed to unregister '%v' command: %v", c.AppCmd.Name, err)
-			return
 		}
 	}
 }

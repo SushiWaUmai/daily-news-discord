@@ -7,9 +7,14 @@ import (
 )
 
 func init() {
+	var defaultMemberPermissions int64 = discordgo.PermissionViewChannel | discordgo.PermissionSendMessages
+	dmPermission := false
+	
 	createCommand(&discordgo.ApplicationCommand{
 		Name:        "help",
 		Description: "shows a list of commands",
+		DefaultMemberPermissions: &defaultMemberPermissions,
+		DMPermission:             &dmPermission,
 		Options: []*discordgo.ApplicationCommandOption{
 			{
 				Type:        discordgo.ApplicationCommandOptionString,

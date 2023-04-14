@@ -52,7 +52,7 @@ func (bot *NewsBot) Start() error {
 func (bot *NewsBot) Close() {
 	bot.cronJob.Stop()
 	commands.UnregisterCommands(bot.session)
-	bot.Close()
+	bot.session.Close()
 }
 
 func (bot *NewsBot) StartJob() error {

@@ -22,9 +22,14 @@ func init() {
 		Value: "all",
 	})
 
+	var defaultMemberPermissions int64 = discordgo.PermissionManageServer
+	dmPermission := false
+
 	createCommand(&discordgo.ApplicationCommand{
-		Name:        "subscribe",
-		Description: "subscribes news to this channel",
+		Name:                     "subscribe",
+		Description:              "subscribes news to this channel",
+		DefaultMemberPermissions: &defaultMemberPermissions,
+		DMPermission:             &dmPermission,
 		Options: []*discordgo.ApplicationCommandOption{
 			{
 				Type:        discordgo.ApplicationCommandOptionString,

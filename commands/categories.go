@@ -8,9 +8,14 @@ import (
 )
 
 func init() {
+	var defaultMemberPermissions int64 = discordgo.PermissionViewChannel | discordgo.PermissionSendMessages
+	dmPermission := false
+
 	createCommand(&discordgo.ApplicationCommand{
 		Name:        "categories",
 		Description: "prints all categories",
+		DefaultMemberPermissions: &defaultMemberPermissions,
+		DMPermission:             &dmPermission,
 	}, func(dg *discordgo.Session, i *discordgo.InteractionCreate) {
 		// Create a string of all categories
 		categories := strings.Join(news.Categories, ", ")
