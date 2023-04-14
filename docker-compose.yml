@@ -11,6 +11,11 @@ services:
       - ./data/clusters/pgdata:/var/lib/postgresql/data
     ports:
       - 5432:5432
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
     restart: unless-stopped
 
   dnd-bot:
@@ -18,4 +23,6 @@ services:
     image: sushiwaumai/daily-news-discord
     env_file:
       - .env
+    depends_on:
+      - dnd-postgres
     restart: unless-stopped
