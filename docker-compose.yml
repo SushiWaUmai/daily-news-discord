@@ -1,7 +1,7 @@
 version: "3"
 services:
   dnd-postgres:
-    container_name: postgres-dnd
+    container_name: dnd-postgres
     image: postgres:alpine
     environment:
       POSTGRES_DB: ${DB_NAME}
@@ -11,4 +11,11 @@ services:
       - ./data/clusters/pgdata:/var/lib/postgresql/data
     ports:
       - 5432:5432
+    restart: unless-stopped
+
+  dnd-bot:
+    container_name: dnd-bot
+    image: sushiwaumai/daily-news-discord
+    env_file:
+      - .env
     restart: unless-stopped
