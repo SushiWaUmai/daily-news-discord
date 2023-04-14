@@ -56,8 +56,7 @@ func (bot *NewsBot) Close() {
 }
 
 func (bot *NewsBot) StartJob() error {
-	// _, err := bot.cronJob.AddFunc("0 0 * * *", bot.sendNews)
-	_, err := bot.cronJob.AddFunc("* * * * *", bot.sendNews)
+	_, err := bot.cronJob.AddFunc("0 0 * * *", bot.sendNews)
 
 	if err != nil {
 		return err
