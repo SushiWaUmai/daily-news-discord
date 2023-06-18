@@ -100,6 +100,9 @@ func (bot *NewsBot) sendNews() {
 				Author: &discordgo.MessageEmbedAuthor{
 					Name: d.Author,
 				},
+				Footer: &discordgo.MessageEmbedFooter{
+					Text: category,
+				},
 			}
 			embeds = append(embeds, embed)
 		}
