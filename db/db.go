@@ -65,6 +65,10 @@ func DeleteGuildChannels(guildID string, channelID string) error {
 	return db.Where("guild_id = ? AND channel_id = ?", guildID, channelID).Delete(&GuildChannel{}).Error
 }
 
+func DeleteGuild(guildID string) error {
+	return db.Where("guild_id = ?", guildID).Delete(&GuildChannel{}).Error
+}
+
 func GetGuildChannel(guildID string, channelID string, category string) (*GuildChannel, error) {
 	var guildChannel GuildChannel
 	err := db.Where("guild_id = ? AND channel_id = ? AND category = ?", guildID, channelID, category).First(&guildChannel).Error

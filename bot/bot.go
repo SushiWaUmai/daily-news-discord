@@ -150,3 +150,11 @@ func handleInteraction(s *discordgo.Session, i *discordgo.InteractionCreate) {
 		c.Execute(s, i)
 	}
 }
+
+func handleGuildLeave(s *discordgo.Session, g *discordgo.GuildDelete) {
+	err := db.DeleteGuild(g.ID)
+
+	if err != nil {
+		log.Printf("Error deleting guild channels for guild %s: %v\n", g.ID, err)
+	}
+}
